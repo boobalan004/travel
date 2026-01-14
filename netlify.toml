@@ -1,0 +1,15 @@
+[build]
+  command = "cd myapp && npm install && npm run build"
+  publish = "myapp/build"
+
+[build.environment]
+  # Set your backend API URL here
+  # Local: http://localhost:5000
+  # Production: https://your-backend-url.com
+  REACT_APP_API_URL = "https://your-backend-url.com"
+
+# Redirect all routes to index.html for React Router
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
